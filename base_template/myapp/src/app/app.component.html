@@ -1,0 +1,67 @@
+<div class="a">
+<h1>VIDEO GAME LOBBY</h1>
+    <ul class="nav">
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/players" routerLinkActive="active">Players</a> </li>
+      <!-- Button to open the modal login form -->
+      <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+    </ul>
+<div class="containerContent">
+  <router-outlet></router-outlet>
+</div>
+</div>
+
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" 
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+        <img src="../assets/imgs/login.png" alt="Avatar" class="avatar">
+      </div>
+    <div class="container">
+      <label>
+        <b>Username</b>
+      </label>
+      <br>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+      <br>
+      <label>
+        <b>Password</b>
+      </label>
+      <br>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <br>
+      <button type="submit">Login</button>
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+    <br>
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+</div>
+
+<!--
+<tr *ngFor="let player of players">
+  <td>{{player.player}}</td>
+  <td>{{player.rank}}</td>
+  <td>{{player.score}}</td>
+  <td>{{player.time}}</td>
+  <td>{{player.gamesPlayed}}</td>
+  <td>{{player.status}}</td>
+</tr>-->

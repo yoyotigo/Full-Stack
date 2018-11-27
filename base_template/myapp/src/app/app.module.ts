@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PlayerCenterComponent } from './player-center/player-center.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
     AppComponent,
     HomeComponent,
     PlayerCenterComponent,
-    PlayerDetailComponent
+    PlayerDetailComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

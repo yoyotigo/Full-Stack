@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterModule, Routes} from '@angular/router';
 import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { PlayerService } from './player.service';
+import { GamesService } from './services/games.service';
 import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatOptionModule, 
 MatSelectModule, MatIconModule, MatButtonModule, MatCardModule, MatTableModule, MatSnackBarModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material/divider';
@@ -50,9 +52,11 @@ const routes: Routes = [
     MatCardModule,
     MatTableModule, 
     MatSnackBarModule,
-    MatDividerModule
+    MatDividerModule,
+    FormsModule,
+    HttpModule
   ],
-  providers: [PlayerService],
+  providers: [PlayerService, GamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

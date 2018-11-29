@@ -2,23 +2,58 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const game = require('./models/games');
 const player = require('./models/player');
-
-const port = 3000;
-const app = express();
-const router = express.Router();
-
-app.use(cors());
-app.use(bodyParser.json());
-
-
-mongoose.connect('mongodb://ncoder:ndmtnodm123@ds263493.mlab.com:63493/user', {useNewUrlParser: true});
+const admin = require('./models/admin');
+const passport = require('passport');
+const config = require('./config/db');
 const connection = mongoose.connection;
+const app = express();
+const port = process.env.PORT || 3000;
+const router = express.Router();
+//connect to database
+mongoose.connect('mongodb://ncoder:ndmtnodm123@ds263493.mlab.com:63493/user', {useNewUrlParser: true});
+//Successfull Connection
+connection.on('connected', () => {
+    console.log('Connected to database ' + config.db);
+});
+//UnsuccessfullConnection
+connection.on('error', (err) => {
+    console.log('Database error: ' + err);
+});
+//CORS middlewear
+app.use(cors());
+//Body Parser Middleware
+app.use(bodyParser.json());
+//Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
-connection.once('open', () =>                   //OPEN OF DATABASE EVENT LISTENER ONE TIME EVENT
+require('./config/passport')(passport);
+
+app.use('/admin', admin)
+
+//Index Route
+app.get('/', (req, res) => {
+    res.send('Invalid Endpoint');
+});
+
+router.route('/games').get((req, res)=>       //HTTP request to get list of players to json format
 {
-    console.log('MongoDB connection established successfully');
-});  
+    game.find((err, games)=>
+    {
+        if (err)
+        {
+            console.log(err);
+        }
+        else
+        {
+            res.json(games);
+        }
+    });
+});
+
+/*Player DB Info */
 
 app.use('/', router);
 
@@ -123,4 +158,7 @@ app.get('*', (req,res)=>
 });*/
 
 
-app.listen(port);
+// Start Server 
+app.listen(port, () => {
+    console.log('Server started on port ' + port);
+});

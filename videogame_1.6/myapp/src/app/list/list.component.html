@@ -38,7 +38,7 @@
       <ng-container matColumnDef="join">
           <th mat-header-cell *matHeaderCellDef>Join Game</th>
           <td mat-cell *matCellDef="let element">
-            <button mat-button onclick="document.getElementById('id01').style.display='block'">{{element.join}}</button>
+            <button mat-button onclick="document.getElementById('id02').style.display='block'">{{element.join}}</button>
           </td>
         </ng-container>
      
@@ -49,8 +49,8 @@
   </mat-card>
 </div>
 
-<div id="id01" class="modal">
-    <span onclick="document.getElementById('id01').style.display='none'" 
+<div id="id02" class="modal">
+    <span onclick="document.getElementById('id02').style.display='none'" 
   class="close" title="Close Modal">&times;</span>
     <form class="modal-content animate">
      
@@ -81,7 +81,7 @@
     </form>
   </div>
   <script>
-        var modal = document.getElementById('id01');
+        var modal = document.getElementById('id02');
         
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {

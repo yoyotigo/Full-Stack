@@ -27,7 +27,7 @@ export class AdminComponent implements OnInit {
     });
   }
 
-editPlayer(id)
+  editPlayer(id)
   {
     this.router.navigate([`/edit/${id}`]);
   }

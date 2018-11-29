@@ -1,0 +1,156 @@
+<h3>Administrator Player View</h3>
+<div>
+
+    <br>
+    <mat-card>
+      <!-- CREATE NEW PLAYER BUTTON REDIRECT TO /CREATE-->
+      <button mat-raised-button color="primary"  onclick="document.getElementById('id01').style.display='block'">Create new Player</button>
+      <!-----------------Add Player Form------------------->
+  <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" 
+    class="close" title="Close Modal">&times;</span>
+      <form class="modal-content animate">
+       
+    
+        <div class="container">
+          <label for="pname"><b>Player Name</b></label>
+          <input type="text" placeholder="Enter Player Name" name="pname" required>
+    
+          <label for="rank"><b>Rank</b></label>
+          <input type="text" placeholder="Enter Player Rank" name="rank" required>
+    
+          <label for="score"><b>Score</b></label>
+          <input type="text" placeholder="Enter Player Score" name="score" required>
+
+          <label for="time"><b>Time</b></label>
+          <input type="text" placeholder="Enter Play Time" name="time" required>
+
+          <label for="games"><b>Games Played</b></label>
+          <input type="text" placeholder="Enter Game Played" name="games" required>
+
+          <label for="status"><b>Status</b></label>
+          <input type="text" placeholder="Enter Player Status" name="status" required>
+
+          <input type="hidden" name="join" value="Join Game">
+
+          <input type="hidden" name="edit" value="Edit">
+
+          <input type="hidden" name="delete" value="Delete">
+
+          <button class="addplayerbtn" type="submit">Add Player</button>
+        </div>
+      </form>
+    </div>
+    <script>
+          var modal = document.getElementById('id01');
+          
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+              if (event.target == modal) {
+                  modal.style.display = "none";
+              }
+          }
+          </script>
+
+      
+      
+      
+      
+      <br><br>
+      <mat-divider></mat-divider>
+      <br>
+      
+      <table mat-table [dataSource]="players">
+        
+        <ng-container matColumnDef="playerName">
+          <th mat-header-cell *matHeaderCellDef>Player Name &nbsp;  </th>
+          <td mat-cell *matCellDef="let element">{{element.playerName}}</td>
+          <td><button mat-button color="primary" (click)="editPlayer(element._id)">Edit</button></td>
+        </ng-container>
+        <ng-container matColumnDef="rank">
+          <th mat-header-cell *matHeaderCellDef>Rank &nbsp; </th>
+          <td mat-cell *matCellDef="let element">{{element.rank}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef>Score &nbsp; </th>
+          <td mat-cell *matCellDef="let element">{{element.score}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef>Time Played &nbsp; </th>
+          <td mat-cell *matCellDef="let element">{{element.time}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="gamesPlayed">
+          <th mat-header-cell *matHeaderCellDef>Games Played &nbsp; </th>
+          <td mat-cell *matCellDef="let element">{{element.gamesPlayed}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status &nbsp; </th>
+          <td mat-cell *matCellDef="let element">{{element.status}}</td>
+        </ng-container>
+        <!--HOW TO MAKE EDIT AND DELETE FOR A COLUMN -->
+       <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef>Edit</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-button color="primary" onclick="document.getElementById('id02').style.display='block'">{{element.edit}}</button>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef>Delete</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-button color="warn" (click)="deletePlayer(element._id)">{{element.delete}}</button>
+            </td>
+        </ng-container>
+           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>  <!--MAKES SURE ALL VALUES ARE DISPLAYED-->
+  
+      </table>
+    </mat-card>
+  </div>
+
+  <!--------------------------- Edit Player Form -------------------------->
+  <div id="id02" class="modal">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+    class="close" title="Close Modal">&times;</span>
+      <form class="modal-content animate">
+       
+    
+        <div class="container">
+          <label for="pname"><b>Player Name</b></label>
+          <input type="text" placeholder="Enter Player Name" name="pname" >
+    
+          <label for="rank"><b>Rank</b></label>
+          <input type="text" placeholder="Enter Player Rank" name="rank" >
+    
+          <label for="score"><b>Score</b></label>
+          <input type="text" placeholder="Enter Player Score" name="score" >
+
+          <label for="time"><b>Time</b></label>
+          <input type="text" placeholder="Enter Play Time" name="time" >
+
+          <label for="games"><b>Games Played</b></label>
+          <input type="text" placeholder="Enter Game Played" name="games" >
+
+          <label for="status"><b>Status</b></label>
+          <input type="text" placeholder="Enter Player Status" name="status" >
+
+          <button class="editplayerbtn" (click)="editPlayer(element._id)" type="submit">Edit Player</button>
+        </div>
+      </form>
+    </div>
+
+
+    
+    <script>
+          var modal = document.getElementById('id01');
+          var modal2 = document.getElementById('id02');
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+              if (event.target == modal || event.target == modal2 ) {
+                  modal.style.display = "none";
+              }
+          }
+          </script>

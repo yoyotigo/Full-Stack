@@ -1,0 +1,47 @@
+<div>
+    <h1>VIDEO GAME LOBBY
+        <div class="adminbtnstyle" >
+        <button class="adminbtn" onclick="document.getElementById('id01').style.display='block'">Admin</button>
+        </div>
+    </h1>
+</div>
+<div>
+    <ul class="nav">
+      <li>
+          <a routerLink="" routerLinkActive="active">Home</a>
+          <a routerLink="/list" routerLinkActive="active">Players</a>
+          <a routerLink="/games" routerLinkActive="active">Games</a>
+      </li>
+    </ul>
+</div>
+<div class="containerContent">
+    <router-outlet></router-outlet>
+</div>
+<!-- Admin Login Feature -->
+<div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" 
+      class="close" title="Close Modal">&times;</span>
+        <form class="modal-content animate">
+         
+      
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+      
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+      
+            <button class="loginbtn" type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+      <script>
+            var modal = document.getElementById('id01');
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+            </script>

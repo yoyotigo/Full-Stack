@@ -89,8 +89,8 @@ router.route('/players/:id').get((req, res)=>
 
 router.route('/players/add').post((req, res)=>
 {
-    let player = new player(req.body);
-    player.save().then(player => 
+    let newplayer = new player(req.body);
+    newplayer.save().then(newplayer => 
         {
             res.status(200).json({'player': 'Added successfully'});
         })

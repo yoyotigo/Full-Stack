@@ -21,7 +21,7 @@ export class PlayerService {
     return this.http.get(`${this.uri}/players/${id}`);
   }
 
-  addPlayer(playerName, rank, score, time, gamesPlayed, status)
+  addPlayer(playerName, rank, score, time, gamesPlayed, status,join,edit,deleted)
   {
     const player = 
     {
@@ -30,7 +30,10 @@ export class PlayerService {
       score: score,
       time: time,
       gamesPlayed: gamesPlayed,
-      status: status
+      status: status,
+      join: join,
+      edit: edit,
+      delete: deleted
     };
     return this.http.post(`${this.uri}/players/add`, player);
   }

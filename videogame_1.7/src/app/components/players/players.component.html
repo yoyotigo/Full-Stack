@@ -1,4 +1,20 @@
 
+<div>
+  <h1>
+      <div class="adminbtnstyle" >
+      <!--<button class="adminbtn" onclick="document.getElementById('id01').style.display='block'">Admin</button>-->
+      <a class="adminbtn" routerLink="/admin" routerLinkActive="active">Admin</a>
+      </div>
+  </h1>
+</div>
+<div>
+      <ul class="nav">
+        <li>
+            <a routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+      </ul>
+  </div>
+  <h3>{{title}}</h3>
 <table class="table table-hover">
     <thead>
     <tr>
@@ -67,4 +83,4 @@
           }
           </script>
         -->
-        
+        <router-outlet></router-outlet>

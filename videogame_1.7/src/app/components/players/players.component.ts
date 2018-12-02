@@ -9,7 +9,7 @@ import { PlayersService } from '../../players.service';
   styleUrls: ['./players.component.css']
 })
 export class PlayersComponent implements OnInit {
-
+title='Player View'
   players:any;
   constructor(private http: HttpClient, private service: PlayersService) { 
     

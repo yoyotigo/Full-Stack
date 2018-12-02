@@ -9,7 +9,7 @@ import { PlayersService } from '../../players.service';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  title='Player Options';
+  title='Admin Player Options';
   players:any;
   constructor(private http: HttpClient, private service: PlayersService) { 
     

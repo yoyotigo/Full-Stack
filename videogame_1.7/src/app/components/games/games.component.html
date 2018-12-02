@@ -1,13 +1,19 @@
 <div>
-    <h3>{{title}}
-    </h3>
-</div>
-<div class='home'>
-    <a routerLink="/admin" routerLinkActive="active">Home</a>
-</div>
-<div class='players'>
-  <a routerLink="/index" routerLinkActive="active">Players</a>
-</div>
-<div class ="games">
-    <a routerLink="/games" routerLinkActive="active">Games</a>
-</div>
+        <h1>
+            <div class="adminbtnstyle" >
+            <!--<button class="adminbtn" onclick="document.getElementById('id01').style.display='block'">Admin</button>-->
+            <a class="adminbtn" routerLink="/home" routerLinkActive="active">Log Out</a>
+            </div>
+        </h1>
+      </div>
+      <div>
+      <div>
+              <ul class="nav">
+                <li>
+                  <a routerLink="/admin" routerLinkActive="active">Home</a>
+                  <a routerLink="/index" routerLinkActive="active">Players</a>
+                  <a routerLink="/games" routerLinkActive="active">Games</a>
+                </li>
+              </ul>
+          </div>
+          <h3>{{title}}</h3>

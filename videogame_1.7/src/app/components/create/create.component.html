@@ -1,0 +1,57 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{ title }}
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Player Name</label>
+        <input type="text" class="form-control" formControlName="playerName" #playerName />
+      </div>
+      <div *ngIf="angForm.controls['playerName'].invalid && (angForm.controls['playerName'].dirty || angForm.controls['playerName'].touched)" class="alert alert-danger">
+      <div *ngIf="angForm.controls['playerName'].errors.required">Player Name is required.</div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Rank</label>
+        <input type="text" class="form-control" formControlName="rank" #rank/>
+      </div>
+      <div *ngIf="angForm.controls['rank'].invalid && (angForm.controls['rank'].dirty || angForm.controls['rank'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['rank'].errors.required"> Rank is required.</div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Score</label>
+        <input type="text" class="form-control" formControlName="score" #score/>
+      </div>
+      <div *ngIf="angForm.controls['score'].invalid && (angForm.controls['score'].dirty || angForm.controls['score'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['score'].errors.required"> Score is required.</div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Time</label>
+        <input type="text" class="form-control" formControlName="time" #time/>
+      </div>
+      <div *ngIf="angForm.controls['time'].invalid && (angForm.controls['time'].dirty || angForm.controls['time'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['time'].errors.required">  Time is required.</div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Games Played</label>
+        <input type="text" class="form-control" formControlName="gamesPlayed" #gamesPlayed/>
+      </div>
+      <div *ngIf="angForm.controls['gamesPlayed'].invalid && (angForm.controls['gamesPlayed'].dirty || angForm.controls['gamesPlayed'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['gamesPlayed'].errors.required"> Games Played is required.</div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Status</label>
+        <input type="text" class="form-control" formControlName="status" #status/>
+      </div>
+      <div *ngIf="angForm.controls['status'].invalid && (angForm.controls['status'].dirty || angForm.controls['status'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['status'].errors.required"> Status is required.</div>
+      </div>
+      <div class="form-group">
+        <button (click)="addPlayer(playerName.value, rank.value, score.value, time.value, gamesPlayed.value, status.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
+     </div>
+     <div class="form-group">
+        <button><a routerLink="/index">Back</a></button>
+     </div>
+    </form>
+  </div>
+</div>

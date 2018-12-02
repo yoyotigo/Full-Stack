@@ -17,7 +17,6 @@ import { GamesComponent } from './components/games/games.component';
 import { PlayersComponent } from './components/players/players.component';
 
 const routes: Routes=[
-  {path: '',  component: AppComponent},
   {path: 'home',  component: HomeComponent},
   {path: 'index', component: IndexComponent},
   {path: 'create', component: CreateComponent},

@@ -15,6 +15,7 @@
       </ul>
   </div>
   <h3>{{title}}</h3>
+ 
 <table class="table table-hover">
     <thead>
     <tr>
@@ -36,51 +37,11 @@
             <td>{{ player.time }}</td>
             <td>{{ player.gamesPlayed }}</td>
             <td>{{ player.status }}</td>
-            <td><button>Join Game</button></td>
+            <td *ngIf="player.status=='Available'">
+              <button><a [routerLink]="['/join', player._id]">Join Game</a> </button>
+            </td>
         </tr>
     </tbody>
   </table>
-    <!--
-  <div id="id02" class="modal">
-      <span onclick="document.getElementById('id02').style.display='none'" 
-    class="close" title="Close Modal">&times;</span>
-      <form class="modal-content animate">
-       
-    
-        <div class="container">
-          <label for="pname"><b>Player:</b></label>
-          <br>
-          <label for="rank"><b>Rank:</b></label>
-          <br>
-          <label for="score"><b>Score:</b></label>
-          <br>
-          <label for="time"><b>Time:</b></label>
-          <br>
-          <label for="games"><b>Favourite Game:</b></label>
-          <br>
-          <label for="status"><b>Customer: </b></label>         
-                <select>
-                  <option disabled selected>Select Game</option>
-                    <option>League of Legends</option>
-                    <option>World of Warcraft</option>
-                    <option>Call of Duty</option>
-                    <option>Minecraft</option>
-                    <option>Dota</option>
-                </select>
-          <br>
-          <button class="joingamebtn" type="submit">Join Game</button>
-        </div>
-      </form>
-    </div>
-    <script>
-          var modal = document.getElementById('id02');
-          
-          // When the user clicks anywhere outside of the modal, close it
-          window.onclick = function(event) {
-              if (event.target == modal) {
-                  modal.style.display = "none";
-              }
-          }
-          </script>
-        -->
+
         <router-outlet></router-outlet>

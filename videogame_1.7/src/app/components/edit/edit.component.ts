@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PlayersService } from '../../players.service'
+import { PlayersService } from '../../services/players.service';
 
 @Component({
   selector: 'app-edit',

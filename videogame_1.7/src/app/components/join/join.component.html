@@ -1,0 +1,60 @@
+
+<div>
+    <h1>
+        <div class="adminbtnstyle" >
+        <!--<button class="adminbtn" onclick="document.getElementById('id01').style.display='block'">Admin</button>-->
+        <a class="adminbtn" routerLink="/admin" routerLinkActive="active">Admin</a>
+        </div>
+    </h1>
+  </div>
+  <div>
+        <ul class="nav">
+          <li>
+              <a routerLink="/home" routerLinkActive="active">Home</a>
+          </li>
+        </ul>
+    </div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      {{ title }}
+    </div>
+
+<div class="panel-body">
+        <form [formGroup]="angForm" novalidate class="modal-content animate">
+            <div class="form-group">
+              <label class="col-md-4">Player Name</label>
+              <input type="text" class="form-control" formControlName="playerName" #playerName [(ngModel)] = "player.playerName"/>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4">Rank</label>
+              <input type="text" class="form-control" formControlName="rank" #rank [(ngModel)] = "player.rank"/>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4">Score</label>
+              <input type="text" class="form-control" formControlName="score" #score [(ngModel)] = "player.score"/>
+            </div>
+             <div class="form-group">
+              <label class="col-md-4">Time</label>
+              <input type="text" class="form-control" formControlName="time" #time [(ngModel)] = "player.time"/>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4">Games Played</label>
+              <input type="text" class="form-control" formControlName="gamesPlayed" #gamesPlayed [(ngModel)] = "player.gamesPlayed"/>
+            </div>
+             <div class="form-group">
+              <label class="col-md-4">Status</label>
+              <input type="text" class="form-control" formControlName="status" #status [(ngModel)] = "player.status"/>
+            </div>
+            <div class="form-group">
+            <label class="col-md-4">Customer</label>
+            <select>
+                <option disabled selected>Select Game</option>
+                  <option>League of Legends</option>
+                  <option>World of Warcraft</option>
+                  <option>Call of Duty</option>
+                  <option>Minecraft</option>
+                  <option>Dota</option>
+              </select>
+            </div>
+          </form>
+          </div>

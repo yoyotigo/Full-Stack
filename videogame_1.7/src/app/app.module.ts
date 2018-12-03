@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
-import { PlayersService } from './players.service';
+import { PlayersService } from './services/players.service';
 
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { GamesComponent } from './components/games/games.component';
 import { PlayersComponent } from './components/players/players.component';
+import { JoinComponent } from './components/join/join.component';
 
 const routes: Routes=[
   {path: '',  component: HomeComponent},
@@ -24,7 +25,8 @@ const routes: Routes=[
   {path: 'edit/:id', component: EditComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'players', component: PlayersComponent},
-  {path: 'games', component: GamesComponent}
+  {path: 'games', component: GamesComponent},  
+  {path: 'join/:id', component: JoinComponent}
 ];
 
 @NgModule({
@@ -36,12 +38,14 @@ const routes: Routes=[
     EditComponent,
     AdminComponent,
     GamesComponent,
-    PlayersComponent
+    PlayersComponent,
+    JoinComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [PlayersService],

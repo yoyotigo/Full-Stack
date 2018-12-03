@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayersService } from '../../players.service'
+import { PlayersService } from '../../services/players.service'
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import { Router } from '@angular/router'
 

@@ -1,10 +1,10 @@
 const express = require('express'),
-      path = require('path'),
       bodyParser = require('body-parser'),
       cors = require('cors'),
       mongoose = require('mongoose'),
       config = require('./config/DB');
-      playerRoutes = require('./Routes/playerRoutes');
+      playerRoutes = require('./routes/playerRoutes');
+      gameRoutes=require('./routes/gamesRoutes')
       
       mongoose.Promise = global.Promise;
       mongoose.connect(config.DB).then(
@@ -17,6 +17,8 @@ const express = require('express'),
       app.use(cors());
       const port = process.env.PORT || 4000;
       app.use('/players', playerRoutes);
-       const server = app.listen(port, function(){
+      app.use('/games', gameRoutes);
+      app.listen(port, function(){
          console.log('Listening on port ' + port);
        });
+       

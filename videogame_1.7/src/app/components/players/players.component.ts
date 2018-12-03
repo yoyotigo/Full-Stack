@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { PlayersService } from '../../players.service';
-
+import { PlayersService } from '../../services/players.service';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-players',

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PlayersService } from '../../services/players.service';
-import { GamesService } from '../../services/games.service';
 
 
 @Component({
@@ -14,9 +12,9 @@ import { GamesService } from '../../services/games.service';
 export class JoinComponent implements OnInit {
 
   title='Join Game'
-  players:any;
+  player:any;
   angForm: FormGroup;
-  constructor(private http: HttpClient,private route: ActivatedRoute, private router: Router, private service: GamesService, private fb: FormBuilder) { 
+  constructor(private route: ActivatedRoute, private router: Router, private service: PlayersService, private fb: FormBuilder) { 
     this.createForm();
   }
   createForm() {
@@ -26,15 +24,22 @@ export class JoinComponent implements OnInit {
       score: [''],
       time: [''],
       gamesPlayed: [''],
-      status: ['' ]
+      status: ['']
    });
   }
 
+  joinGame(playerName, rank, score, time, gamesPlayed,status) {
+    status='In Game';
+    this.route.params.subscribe(params => {
+    this.service.joinGame(playerName, rank, score, time, gamesPlayed,status, params['id']);
+    this.router.navigate(['players']);
+  });
+}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.players = this.service.joinGame(params['id']).subscribe(res => {
-        this.players = res;
+      this.player = this.service.playerGame(params['id']).subscribe(res => {
+        this.player = res;
       });
     });
   }

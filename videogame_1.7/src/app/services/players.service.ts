@@ -57,6 +57,31 @@ export class PlayersService {
       .post(uri, obj)
       .subscribe(res => console.log('Done'));
   }
+  playerGame(id) {
+    const uri = 'http://localhost:4000/players/join/' + id;
+    return this
+            .http
+            .get(uri)
+            .pipe(map(res => {
+              return res;
+            }));
+  }
+  joinGame(playerName, rank, score, time, gamesPlayed,status, id) {
+    const uri = 'http://localhost:4000/players/joingame/' + id;
+
+      const obj = {
+        playerName:playerName ,
+        rank:rank ,
+        score:score,
+        time:time ,
+        gamesPlayed:gamesPlayed,
+        status:status,
+      };
+    this
+      .http
+      .post(uri, obj)
+      .subscribe(res => console.log('Done'));
+  }
   deletePlayer(id){
     const uri = 'http://localhost:4000/players/delete/' + id;
 

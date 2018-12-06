@@ -2,19 +2,9 @@
 
 By: Tiago Sa 101054051 & Nickolas Di Domenico 
 
-Admin User:
+Admin User: yoyotigo
 
-Admin Password:
+Admin Password: password
 
 
-TO RUN THIS PROJECT DO THE FOLLOWING:
-
-npm install
-
-npm install express
-
-npm install cors --save
-
-npm install mongoose
-
-npm update
+TO RUN THIS PROJECT INSTALL ALL APPROPRIATE MODULES

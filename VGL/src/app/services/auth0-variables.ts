@@ -5,7 +5,7 @@ interface AuthConfig {
 }
 
 export const AUTH_CONFIG: AuthConfig = {
-  clientID: 'xUvMomkt2EddfOWOiApaMChiQ7izy51x',
-  domain: 'ncoder.auth0.com',
+  clientID: 'JCRFycJUL7csrrOdHqo3W4R6hbYR8-U1',
+  domain: 'ncoder13d.auth0.com',
   callbackURL: 'http://localhost:3000/callback'
 };

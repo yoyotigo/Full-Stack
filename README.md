@@ -6,5 +6,8 @@ Admin User: yoyotigo
 
 Admin Password: password
 
+Login: admin@admin.com
+pw:Admin123!
+
 
 TO RUN THIS PROJECT INSTALL ALL APPROPRIATE MODULES

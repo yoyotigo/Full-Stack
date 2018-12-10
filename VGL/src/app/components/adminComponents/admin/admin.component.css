@@ -6,6 +6,8 @@ ul {
 .center
 {
     text-align: center;
+    background-image: url(../../../../assets/img/bg.gif);
+    background-size: cover;
 }
 
 h1{
@@ -55,3 +57,4 @@ table, th, td {
     color: black;
     text-decoration: none;
 }
+

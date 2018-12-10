@@ -63,8 +63,9 @@ table, th, td {
     color: white;
 }
 
-html { 
-    background: url(https://media.giphy.com/media/CYrBAoFl9FK5G/giphy.gif) no-repeat center center fixed; 
-    background-size: cover;
-    height: 100%;
+.header { 
+    background-image: url(../assets/img/clouds.gif); 
+  }
+.pages{
+    background-image: url(../assets/img/bg.gif);
   }

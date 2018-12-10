@@ -1,3 +1,9 @@
+
+.center
+{
+    text-align: center;
+}
+
 h1{
     margin-left: 653px;
 }
@@ -43,4 +49,24 @@ table, th, td {
 .adminLink{
     color: black;
     text-decoration: none;
+}
+
+.btn{
+    width: 150px;
+}
+
+.tf
+{
+    width: 300px;
+}
+
+.tf2
+{
+    width:173px;
+}
+.btn
+{
+    width: 150px;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    color: white;
 }

@@ -1,17 +1,17 @@
 <script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
+<div class="center">
 <div>
         <ul class="nav">
           <li>
-              <a routerLink="/players" routerLinkActive="active">Players</a>
+              <a routerLink="/players" routerLinkActive="active" style="font-size: 30px;">Players</a>
           </li>
           <li>
             <a routerLink="/admin" routerLinkActive="active" *ngIf="auth.isAuthenticated()">Admin</a>
           </li>
         </ul>
-    </div>
-    <h3>  
-        Welcome to Video Games+
-    </h3>
+    </div><br>
+    <h2 style="font-family: 'Raleway',sans-serif; font-size: 35px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;">
+    Welcome to VideoGames+</h2>
     <p>
         If you are a player, you may do the following:
     </p>
@@ -45,3 +45,4 @@
               View the List of Games Available
             </li>
         </ul>
+</div>

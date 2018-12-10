@@ -1,20 +1,21 @@
-<div class="panel panel-primary">
+<div class="panel panel-primary">  <div class="center">
   <div class="panel-heading">
-    {{ title }}
+    <h2 style="font-family: 'Raleway',sans-serif; font-size: 35px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;">{{ title }} </h2>
   </div>
+
   <div class="panel-body">
     <form [formGroup]="angForm" novalidate>
       <div class="form-group">
-        <label class="col-md-4">Player Name</label>
-        <input type="text" class="form-control" formControlName="playerName" #playerName />
+        <label class="col-md-4">Player Name</label><br>
+        <input class="tf" type="text" class="form-control" formControlName="playerName" #playerName />
       </div>
       <div *ngIf="angForm.controls['playerName'].invalid && (angForm.controls['playerName'].dirty || angForm.controls['playerName'].touched)" class="alert alert-danger">
       <div *ngIf="angForm.controls['playerName'].errors.required">Player Name is required.</div>
       </div>
       <div class="form-group">
-        <label class="col-md-4">Rank</label>
-         <select class="form-control" formControlName="rank" [(ngModel)]='rank.rank'>
-              <option *ngFor="let r of rank" [ngValue]='r'>
+        <label class="col-md-4">Rank</label><br>
+         <select class="form-control tf2" formControlName="rank" [(ngModel)]='rank.rank'>
+              <option class="tf" *ngFor="let r of rank" [ngValue]='r'>
                 {{r}}
               </option>
             </select>
@@ -23,22 +24,22 @@
         <div *ngIf="angForm.controls['rank'].errors.required"> Rank is required.</div>
       </div>
       <div class="form-group">
-        <label class="col-md-4">Score</label>
+        <label class="col-md-4">Score</label><br>
         <input type="text" class="form-control" formControlName="score" #score/>
       </div>
       <div *ngIf="angForm.controls['score'].invalid && (angForm.controls['score'].dirty || angForm.controls['score'].touched)" class="alert alert-danger">
         <div *ngIf="angForm.controls['score'].errors.required"> Score is required.</div>
       </div>
       <div class="form-group">
-        <label class="col-md-4">Time</label>
+        <label class="col-md-4">Time</label><br>
         <input type="text" class="form-control" formControlName="time" #time/>
       </div>
       <div *ngIf="angForm.controls['time'].invalid && (angForm.controls['time'].dirty || angForm.controls['time'].touched)" class="alert alert-danger">
         <div *ngIf="angForm.controls['time'].errors.required">  Time is required.</div>
       </div>
       <div class="form-group">
-        <label class="col-md-4">Games Played</label>
-        <select class="form-control" formControlName="gamesPlayed" #gamesPlayed>
+        <label class="col-md-4">Games Played</label><br>
+        <select class="form-control tf2" formControlName="gamesPlayed" #gamesPlayed>
             <option *ngFor="let game of games" [ngValue]='game.title'>
               {{game.title}}
             </option>
@@ -48,8 +49,8 @@
         <div *ngIf="angForm.controls['gamesPlayed'].errors.required"> Games Played is required.</div>
       </div>
       <div class="form-group">
-        <label class="col-md-4">Status</label>
-        <select  formControlName="status" [(ngModel)] = "statuses.status">
+        <label class="col-md-4">Status</label><br>
+        <select class="tf2" formControlName="status" [(ngModel)] = "statuses.status">
             <option  *ngFor='let stat of statuses' [ngValue]='stat.st' >
               {{stat.st}}
             </option>
@@ -59,11 +60,11 @@
         <div *ngIf="angForm.controls['status'].errors.required"> Status is required.</div>
       </div>
       <div class="form-group">
-        <button (click)="addPlayer(playerName.value, rank.rank, score.value, time.value, gamesPlayed.value, statuses.status)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
+        <button class="btn" (click)="addPlayer(playerName.value, rank.rank, score.value, time.value, gamesPlayed.value, statuses.status)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
      </div>
      <div class="form-group">
-        <button><a routerLink="/index">Back</a></button>
+        <button class="btn"><a routerLink="/index">Back</a></button>
      </div>
     </form>
   </div>
-</div>
+</div></div>

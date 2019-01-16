@@ -1,4 +1,4 @@
-# COMP3123
+# COMP3123 Video Game Lobby 
 
 By: Tiago Sa 101054051 & Nickolas Di Domenico 101083325
 
